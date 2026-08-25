@@ -1,0 +1,200 @@
+@import "variables.styl"
+
+.bank-detail
+  display flex
+  flex-wrap wrap
+  gap 20px
+
+  & > div
+    width calc(50% - 10px)
+    min-width calc(50% - 10px)
+
+
+.bank-popup .pop-over-inner
+  max-width 600px
+
+.order-wrapper
+  display flex
+
+  .layer-white.spinner-wrapper
+    &:after
+      background #f1f2f3
+
+  .right-area
+    width calc(100% - 250px)
+
+  .left-sidebar
+    font-size 1.1em
+    min-width 250px
+
+    li
+      display block
+
+      a
+        padding 5px 0
+
+    .active
+      font-weight 600
+      color primary-color
+
+  table.shipping-table
+    td
+      vertical-align baseline
+      border none
+
+  table
+    margin 15px 0
+
+    td
+      padding 15px
+      border-bottom 1px solid #eee
+
+      .img-wrap
+        width 60px
+        height 60px
+
+        img
+          height auto
+          border-radius border-radius
+          object-fit cover
+
+    tr
+      background none!important
+
+    th
+      border none
+      background #f8f7f6
+      font-weight 400
+      font-size 0.9em
+      text-align left
+      padding 15px
+
+  .order-details
+    & > li
+      margin 5px 0
+      display flex
+      justify-content space-between
+
+      & > span:first-child
+        font-weight 600
+        width 160px
+
+      & > span:last-child
+        width 150px
+
+  .order-price
+    li
+      padding 10px 0
+      border-bottom 1px solid #eee
+
+      &:last-child
+        border-bottom none
+
+      span:first-child
+        text-align right
+        width 100px
+
+      span:last-child
+        text-align right
+        width 80px
+
+.note-dialog-overlay
+  position fixed
+  inset 0
+  background rgba(0, 0, 0, 0.45)
+  z-index 1200
+  display flex
+  align-items center
+  justify-content center
+  padding 16px
+
+.note-dialog
+  position relative
+  width 100%
+  max-width 520px
+  background #fff
+  border-radius 10px
+  padding 18px
+  box-shadow 0 10px 30px rgba(0,0,0,.2)
+
+  .note-dialog-close
+    position absolute
+    right 10px
+    top 5px
+    border 0
+    background transparent
+    font-size 1.4rem
+    line-height 1
+    cursor pointer
+
+  .note-dialog-image
+    width 100%
+    max-height 260px
+    overflow hidden
+    border 1px solid #e6e6e6
+    border-radius 8px
+    background #fafafa
+
+    img
+      width 100%
+      max-height 260px
+      object-fit contain
+      display block
+
+  .note-dialog-message
+    white-space pre-line
+    overflow-wrap anywhere
+    word-break break-word
+    color #333
+    margin 0
+
+  .note-dialog-message-wrap
+    margin-top 2px
+
+  .note-dialog-message-label
+    margin 0 0 4px
+    font-weight 600
+
+
+@media only screen and (max-width: 1200px)
+  .order-wrapper
+    .right-area
+      width calc(100% - 180px)
+
+    .left-sidebar
+      min-width 180px
+
+@media only screen and (max-width: 992px)
+  .order-wrapper
+    .right-area
+      width calc(100% - 150px)
+
+    .left-sidebar
+      min-width 150px
+
+@media only screen and (max-width: 768px)
+  .order-wrapper
+    display block
+
+    .right-area
+      width 100%
+
+    .left-sidebar
+      width 100%
+      display flex
+      flex-wrap wrap
+      margin 0 -5px 10px
+
+      li
+        margin 0 5px
+
+@media only screen and (max-width: 576px)
+  .order-detail-layout
+    margin-top 0 !important
+
+  .order-wrapper
+    .pay-btn
+      position absolute
+      top 50%
+      right 15px
+      transform translateY(-50%)

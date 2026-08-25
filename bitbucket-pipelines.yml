@@ -1,0 +1,11 @@
+pipelines:
+  branches:
+    master:
+      - step:
+          name: Smart Deploy (master)
+          runs-on:
+            - self.hosted
+            - givvoproductionae
+            - linux.shell
+          script:
+            - bash /var/www/shopping_cart/deploy.sh

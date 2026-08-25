@@ -1,0 +1,82 @@
+services:
+  # Laravel App
+  app:
+    build:
+      context: backend
+      dockerfile: Dockerfile
+    container_name: app
+    platform: linux/amd64
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "${PORT}:9000"
+    environment:
+      SERVICE_NAME: app
+      SERVICE_TAGS: dev
+    working_dir: /var/www/backend
+    volumes:
+      - ./backend/php/local.ini:/usr/local/etc/php/conf.d/local.ini
+      - ./backend:/var/www/backend
+    depends_on:
+      - db
+    networks:
+      - laradock_backend
+    user: "${UID}:${GID}"
+
+  # SSL (optional for local, but kept)
+  certbot:
+    image: certbot/certbot:latest
+    platform: linux/amd64
+    container_name: certbot
+    volumes:
+      - ./certbot/www/:/var/www/certbot/:rw
+      - ./certbot/conf/:/etc/letsencrypt/:rw
+    networks:
+      - laradock_backend
+
+  # Nginx
+  nginx:
+    image: nginx:alpine
+    platform: linux/amd64
+    container_name: nginx
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "${NGINX_PORT}:80"
+    volumes:
+      - ./:/var/www
+      - ./certbot/www:/var/www/certbot/:ro
+      - ./certbot/conf:/etc/letsencrypt/:ro
+      - ./nginx/config/default.conf:/etc/nginx/conf.d/default.conf
+      - ./nginx/config/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - app
+    networks:
+      - laradock_backend
+
+  # MySQL
+  db:
+    image: mysql:5.7
+    platform: linux/amd64
+    container_name: db
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "${MYSQL_PORT}:3306"
+    environment:
+      MYSQL_DATABASE: shopping_cart
+      MYSQL_USER: db_user
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - mysqldata:/var/lib/mysql
+    networks:
+      - laradock_backend
+
+networks:
+  laradock_backend:
+    driver: bridge
+
+volumes:
+  mysqldata:
+    driver: local

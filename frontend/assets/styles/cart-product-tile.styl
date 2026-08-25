@@ -1,0 +1,246 @@
+.cart-product-tile
+  font-size .9em
+
+  .img-wrapper
+    width 120px
+    height 120px
+
+    img
+      width 100%
+      height 100%
+      object-fit cover
+
+  .content-wrap
+    gap 20px
+    flex-wrap wrap
+
+    h5
+      font-size 1.05em
+
+    h6
+      font-size .9em
+
+    .price-row
+      font-size 1em
+      font-weight 600
+      color #111
+      margin-top 6px
+      display flex
+      align-items center
+      gap 8px
+
+      .qty
+        font-size .95em
+        color #444
+
+    .note-block
+      margin-top 10px
+      padding-top 10px
+      border-top 1px solid #ececec
+
+      .note-hidden-input
+        display none
+
+      .note-title
+        font-size 1.15em
+        line-height 1.25
+        font-weight 500
+        margin-bottom 10px
+        color #5c5c5c
+
+      .note-row
+        display flex
+        gap 10px
+        align-items flex-start
+        flex-wrap nowrap
+
+      .note-col
+        display flex
+        flex-direction column
+        gap 5px
+
+      .note-col-image
+        flex 0 0 130px
+
+      .note-col-message
+        flex 0 1 320px
+        max-width 320px
+
+      .note-image
+        width 130px
+        height 92px
+        border 1px solid #e2e2e2
+        border-radius 6px
+        overflow hidden
+        display flex
+        align-items center
+        justify-content center
+        background #f7f7f7
+
+        img
+          width 100%
+          height 100%
+          object-fit cover
+
+      .note-image-placeholder
+        font-size .9em
+        color #888
+        text-align center
+        padding 10px
+
+      .note-message-box
+        border 1px solid #e2e2e2
+        border-radius 8px
+        padding 10px
+        min-height 88px
+        background #fff
+        color #333
+        white-space pre-line
+        overflow-wrap anywhere
+        word-break break-word
+        position relative
+        box-shadow none
+        transition border-color .2s ease, box-shadow .2s ease
+
+        &:focus-within
+          border-color var(--primary-color)
+          box-shadow none
+
+        p
+          margin 0
+          font-size 1em
+          line-height 1.3
+          white-space pre-wrap
+          overflow-wrap anywhere
+          word-break break-word
+
+      .note-edit-input
+        width 100%
+        min-height 64px
+        border 0
+        background transparent
+        color inherit
+        resize vertical
+        outline none
+        font-size 1em
+        line-height 1.3
+        padding 0
+        margin 0
+        white-space pre-wrap
+        overflow-wrap anywhere
+        word-break break-word
+
+        &::placeholder
+          color #a4a4a4
+
+        &:focus
+          border 0
+          outline none
+          box-shadow none
+
+      .note-count
+        position absolute
+        right 8px
+        bottom 6px
+        font-size .78em
+        color #8f8f8f
+
+      .note-action
+        margin 0
+        color #1d6dcf
+        font-size .95em
+        line-height 1
+        font-weight 500
+
+      .note-action-btn
+        border 0
+        background transparent
+        padding 0
+        cursor pointer
+        text-align left
+
+        &:disabled
+          opacity .6
+          cursor not-allowed
+
+  .shipping-select
+    min-width 220px
+    margin-left auto
+    display flex
+    flex-direction column
+    gap 10px
+    flex 1 1 220px
+
+    .rd-container
+      display block
+      font-size .9em
+      line-height 1.4
+
+    .state-select
+      .label-lite
+        display block
+        font-size .85em
+        color #777
+        margin-bottom 6px
+
+  .right-text
+    min-width 160px
+    display flex
+    flex-direction column
+    align-items flex-end
+    gap 8px
+
+    .state-select
+      min-width 160px
+      margin-right 0
+
+
+@media only screen and (max-width: 768px)
+  .cart-product-tile
+    .w-120x.img-wrapper
+      width 80px
+
+    .shipping-select
+      margin-left 0
+      min-width 100%
+      flex 1 1 100%
+
+    .right-text
+      align-items flex-start
+      min-width 100%
+
+    .content-wrap
+      .note-block
+        .note-title
+          font-size 1rem
+
+        .note-row
+          flex-wrap wrap
+
+        .note-col-image
+          flex 1 1 100%
+
+        .note-col-message
+          flex 1 1 100%
+
+        .note-image
+          width 100%
+          max-width 130px
+          height 92px
+
+        .note-message-box
+          min-height 92px
+
+          p
+            font-size .95rem
+
+@media only screen and (max-width: 576px)
+  .cart-product-tile
+    flex-direction column
+
+    .content-wrap
+      padding-left 40px
+      width 100%
+
+    .w-120x.img-wrapper
+      width 50px

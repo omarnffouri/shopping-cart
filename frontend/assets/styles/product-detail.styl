@@ -1,0 +1,390 @@
+@import "variables.styl"
+
+.product-product-id
+  .home-section
+    .area-content
+    .title
+      padding-left 0
+      padding-right 0
+
+.detail-menu
+  font-size .9em
+  background #F1F2F3
+  border-bottom 1px solid #eee
+
+  a
+    padding 0 15px
+    line-height 40px
+
+    &:hover
+      background #fff
+
+    &:active
+      background #ddd
+
+.product-detail
+  .product-main
+    flex-grow 1
+    gap 15px
+    display flex
+    position relative
+
+    .product-price
+      display none
+
+    .vouchers-wrapper
+      .flex
+        .card:last-child
+          margin-bottom 0!important
+
+    .detail-image-wrapper
+      min-width 540px
+      max-width 540px
+      position relative
+      z-index 2
+
+      .image-assurance
+        display flex
+        align-items center
+        justify-content center
+        flex-wrap nowrap
+        width calc(100% - 84px)
+        max-width calc(100% - 84px)
+        gap 6px
+        margin-left auto
+        margin-right 0
+
+      .image-delivery-banner
+        padding 7px 8px
+        border-radius 8px
+        background #f2f4f8
+        display inline-flex
+        align-items flex-start
+        gap 8px
+        flex 0 0 auto
+        min-width 0
+        width fit-content
+        max-width none
+
+        .delivery-today-icon
+          flex 0 0 auto
+          color #4d5562
+          margin-top 1px
+
+        .delivery-today-content
+          min-width 0
+
+        .delivery-today-title
+          margin 0
+          font-size .98em
+          line-height 1.2
+          color #4d5562
+          font-weight 600
+
+        .delivery-today-highlight
+          color var(--primary-color)
+
+        .delivery-today-note
+          margin 4px 0 0
+          font-size .82em
+          line-height 1.25
+          color #5d6470
+
+      .image-secure-note
+        display inline-flex
+        align-items center
+        flex 0 0 auto
+        min-width 0
+        padding 7px 5px
+        border-radius 8px
+        background #f2f4f8
+        color #243f76
+        font-size .9em
+        font-weight 600
+        line-height 1.3
+
+      .detail-image-inner
+        position sticky
+        top 20px
+        z-index 1
+
+@media only screen and (max-width: 1200px)
+  .product-detail
+    .product-main
+      .detail-image-wrapper
+        .image-assurance
+          gap 8px
+
+        .image-delivery-banner
+          padding 7px 9px
+
+        .image-secure-note
+          font-size .84em
+
+.suggested-container
+  position relative
+  transition all .2s
+  max-height 10000px
+
+  .review-list
+  .rating-banner
+  .total-rating
+    opacity 0
+
+  .suggested-wrapper
+    position relative
+    padding-left 365px
+
+    .suggested-banner
+      width 365px
+      position absolute
+      left 0
+      top 0
+      padding-right 30px
+
+.suggested-container.mx-h-0
+  min-height 0
+  max-height 0
+  overflow hidden
+
+.suggested-container.review-loaded
+  .review-list
+  .rating-banner
+  .total-rating
+    opacity 1
+
+.voucher-code
+  margin-bottom 5px
+
+.bundle-deal
+  border-radius border-radius
+  font-size .9em
+  padding 4px 10px
+  color primary-deep
+  border 1px dashed primary-color
+
+.product-detail
+  .vouchers-wrapper
+    min-height 200px
+
+    &.single-item
+      min-height 0
+
+    .card
+      flex-grow 1
+
+.expanded
+  max-height 100%!important
+
+  &:after
+    display none
+
+.rtl .editor ul
+  padding-left 0
+  padding-right 2em
+
+@media only screen and (min-width: 769px)
+  .detail-page
+    .product-detail
+      .product-main
+        gap 16px
+        align-items stretch
+
+      .product-main > .pl-30.grow
+        padding-left 0px !important
+
+  .detail-page
+    .product-detail
+      .product-main
+        .product-info-panel
+          max-height calc(100vh - 140px)
+          overflow-y auto
+          padding-right 10px
+          scroll-behavior smooth
+          scrollbar-width none
+          -ms-overflow-style none
+
+          &::-webkit-scrollbar
+            width 0
+            height 0
+
+  .product-detail
+    .product-main
+      .title-price-row
+        margin-bottom 8px
+
+      .product-title
+        font-size 1.4em
+        line-height 1.3
+        font-weight 500
+        margin-bottom 10px
+
+      .product-price
+        display flex
+        flex-direction column
+        align-items flex-start
+        gap 4px
+        white-space nowrap
+
+        .currency
+          font-size 1.25em
+          line-height 1
+          margin-top 6px
+          color #222
+
+        .amount
+          font-size 3em
+          line-height 1.1
+          font-weight 500
+          color #222
+
+        .price-row
+          display flex
+          gap 2px
+
+        .price-tax-note
+          font-size .80em
+          color #666
+
+
+.editor
+  li
+    line-height 1.9
+    list-style disc
+    display list-item
+
+  ul
+    padding-left 2em
+    list-style-type disc
+    list-style-position inside
+
+  ol
+    padding-left 2em
+    list-style-position inside
+    list-style-type decimal
+
+    li
+      list-style decimal
+
+
+
+@media only screen and (max-width: 1200px)
+  .product-detail
+    .product-main
+      .detail-image-wrapper
+        min-width 460px
+        max-width 100%
+
+@media only screen and (min-width: 993px)
+  .voucher-pop-over-right
+    position absolute
+    top 0
+    left calc(100% + 10px)
+    right auto
+    z-index 30
+
+    .pop-over-inner
+      top 0
+      left 0
+      right auto
+      transform none
+      // width 420px
+      // min-width 420px
+      // max-width 420px
+      z-index 30
+
+      &:before
+      &:after
+        display block
+        left -10px
+        top 10px
+        margin-left 0
+        border-left 0
+        border-bottom 10px solid transparent
+        border-top 10px solid transparent
+
+      &:after
+        border-right 10px solid #fff
+
+      &:before
+        left -11px
+        border-right 10px solid #aaa
+
+
+@media only screen and (max-width: 992px)
+  .product-detail
+    .product-main
+      flex-direction column
+
+@media only screen and (max-width: 768px)
+  .no-scroll .detail-image-inner
+    z-index 2!important
+
+
+  .detail-image-inner.z-2
+    z-index 1 !important
+
+
+  .product-detail
+    .product-main
+      padding-left 0
+
+      .detail-image-wrapper
+        width 100%
+        min-width 0
+        min-height 250px
+        position static
+
+        .slider-content-inner
+          min-height 300px
+
+  .detail-page
+    .product-detail
+      .product-main
+        .title-price-row
+          display flex
+          justify-content space-between
+          align-items flex-start
+          gap 10px
+
+        .product-title
+          flex 1
+          min-width 0
+
+        .product-price
+          display flex
+          flex-direction column
+          align-items flex-start
+          gap 0
+          white-space nowrap
+
+          .price-row
+            display flex
+            gap 2px
+
+          .currency
+            font-size .6em
+            line-height 1
+            margin-top 0
+            color #666
+
+          .amount
+            font-size 1.7em
+            font-weight 400
+            line-height 1
+
+          .price-tax-note
+            font-size .7em
+            line-height 1.1
+            display none
+
+        h1.f-16
+          font-size 1.2em
+          line-height 1.3
+          font-weight 500
+          margin-bottom 6px
+
+@media only screen and (max-width: 576px)
+  .product-main .two-sided .left
+    width 90px
+    min-width 90px

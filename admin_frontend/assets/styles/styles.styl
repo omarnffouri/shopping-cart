@@ -1,0 +1,143 @@
+@import "./common.styl"
+@import "./header.styl"
+@import "./sidebar.styl"
+@import './base.styl'
+@import './nprogress.styl'
+@import "./content.styl"
+@import "./table.styl"
+@import "./pagination.styl"
+@import "./seacrh-input.styl"
+@import "./order-chart.styl"
+@import "./dropdown.styl"
+@import "./dashboard.styl"
+@import "./form.styl"
+@import "./tab.styl"
+@import "./icons.styl"
+@import "./tab-sideabr.styl"
+@import "./error.styl"
+@import "./login.styl"
+@import "./datetime-picker.styl"
+@import "./product.styl"
+@import "./input.styl"
+@import "./permission.styl"
+@import "./payment.styl"
+@import "./image-input.styl"
+@import "./order.styl"
+@import "./tree.styl"
+@import "./multiple-dropdown.styl"
+@import "./images.styl"
+@import "./table-top.styl"
+@import "./product-inventory.styl"
+@import "./pos.styl"
+@import "./radio.styl"
+@import "./pos-ordered.styl"
+@import "./plugins.styl"
+@import "./toast-message.styl"
+@import "./withdrawal.styl"
+@import "./tag.styl"
+@import "./product-search.styl"
+@import "./slider.styl"
+@import "./inline-pop-over.styl"
+@import "./wysiwyg-editor.styl"
+
+.flatpickr-calendar.open span {
+  box-shadow: none;
+}
+.banner-table
+  img
+    max-width 300px
+    max-height 300px
+
+.rating-review-wrapper
+  table
+    min-width 800px
+
+.left-dd
+  min-width 150px
+
+  .dropdown-inner
+
+    left 0 !important
+    right auto !important
+
+.rtl
+  direction rtl
+
+.rtl .dashboard-notice .close-btn
+  left 10px
+  right auto
+
+.rtl .dashboard-notice
+  padding-left 50px
+  padding-right 15px
+
+.dashboard-notice
+  position relative
+  padding-right 50px
+
+  .close-btn
+    position absolute
+    top 12px
+    right 10px
+    cursor pointer
+
+.shipping-rule
+  border-radius 7px
+  position relative
+  border 1px solid #ddd
+
+  .shipping-rule-inner
+    z-index 1
+    position relative
+
+    &:after
+      content ''
+      position absolute
+      top 0
+      bottom 0
+      left 0
+      right 0
+      z-index -2
+      opacity 0
+      background #eee
+
+    &.deleted
+      &:after
+        opacity .6
+        z-index 0
+
+  .undo-btn
+    transition none
+    position absolute
+    top 50%
+    left 50%
+    z-index 2
+    transform translate(-50%, -50%)
+
+.attribute-value-wrapper
+  display flex
+  flex-wrap wrap
+
+  input
+    min-width 100px
+    flex 1
+    width auto
+    margin-bottom 15px
+
+.loading
+  position relative
+
+  &:after
+    content ''
+    position absolute
+    z-index 1
+    top 0
+    left 0
+    right 0
+    bottom 0
+    background transparent
+
+.setting
+  .has-error
+    .file-input
+      border-color #ddd !important

@@ -1,0 +1,6 @@
+.idea
+
+.env
+
+# Private service credentials
+/backend/service-account.json

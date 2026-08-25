@@ -1,0 +1,363 @@
+@import "variables.styl"
+
+
+.discounted-price
+  background #EEFAF4
+  color #2DBF74
+  display flex
+  gap 15px
+  justify-content space-between
+
+  .price
+    text-align right
+    color inherit
+    min-width 100px
+
+
+.rtl .checkout-detail.product-detail .detail-left
+  margin-left 20px!important
+  margin-right 0!important
+
+.rtl .checkout-detail.product-detail
+  padding-right 0
+  padding-left order-right-width
+
+.rtl .checkout
+  .delivery-schedule
+    .delivery-picker-trigger
+      .arrow-right
+        transform rotate(90deg)
+
+.rtl .delivery-date-popup
+  .calendar-nav
+    .arrow-left
+      transform rotate(-90deg)
+
+    .arrow-right
+      transform rotate(90deg)
+
+.checkout-detail.product-detail
+  padding-right order-right-width
+
+.checkout-detail.product-detail .detail-right
+  width order-right-width
+
+
+.checkout
+  .checkout-address-form
+    width 100%
+    max-width 100%
+
+  .tab-heading label
+    height 140px
+    width 140px
+
+    .bank-icon
+      transform scale(1.2)
+      opacity .8
+
+    i + span
+      font-weight bold
+      margin-top 5px
+      opacity .8
+
+  .delivery-schedule
+    width 100%
+    max-width 400px
+
+    .delivery-picker-trigger
+      width 100%
+      height 56px
+      border 1px solid #ddd
+      border-radius border-radius
+      padding 0 12px
+      background #fff
+      display flex
+      align-items center
+      justify-content space-between
+      font-size 1.1rem
+      line-height 1
+
+      .icon
+        height 24px
+        width 24px
+        min-width 24px
+
+      .order-icon
+        background-position 77% 23%
+
+      .shipping-icon
+        background-position 55.3% 23%
+
+      &:hover
+        border-color primary-color
+
+      &:disabled
+        opacity .5
+        cursor not-allowed
+
+.delivery-date-popup
+.delivery-slot-popup
+  .pop-over-inner
+    max-width 980px
+    width calc(100vw - 60px)
+
+  .pop-heading
+    background var(--primary-color)
+    color #fff
+    border-bottom 0
+
+    h5
+      color #fff
+
+    .close-btn
+      background transparent !important
+
+      .close-icon
+        background-position 1.5% 13.5%
+
+  .pop-over-content
+    max-height 75vh
+    padding 24px 30px
+
+.delivery-date-popup
+  .pop-over-inner
+    max-width 450px
+
+  .pop-over-content
+    padding 16px 18px
+
+  .delivery-calendar
+    .calendar-nav
+      display flex
+      align-items center
+      justify-content center
+      gap 35px
+      margin-bottom 14px
+
+      h5
+        margin 0
+        min-width 180px
+        text-align center
+
+      .calendar-nav-btn
+        height 38px
+        width 38px
+        border-radius 40px
+        display flex
+        align-items center
+        justify-content center
+
+    .calendar-grid-head
+    .calendar-grid-body
+      display grid
+      grid-template-columns repeat(7, minmax(0, 1fr))
+      gap 6px
+
+    .calendar-grid-head
+      margin-bottom 8px
+
+      span
+        text-align center
+        opacity .7
+        font-size 1.2rem
+
+    .calendar-day
+      border 1px solid transparent
+      border-radius 8px
+      height 40px
+      width 100%
+      font-size 1.05rem
+      background transparent
+
+      &:hover
+        border-color var(--primary-color)
+        background #f9f8ed
+
+      &.active
+        border-color var(--primary-color)
+        background #f3eed1
+
+      &.empty
+        opacity .3
+        pointer-events none
+
+      &.disabled
+        opacity .35
+        pointer-events none
+
+.delivery-slot-popup
+  .pop-over-inner
+    max-width 500px
+
+  .slot-list
+    .slot-method
+      border 1px solid #ddd
+      border-radius border-radius
+      overflow hidden
+      margin-bottom 12px
+      background #fff
+
+      &:last-child
+        margin-bottom 0
+
+      &.active
+        border-color #c8c8c8
+
+      .slot-method-head
+        width 100%
+        display flex
+        align-items center
+        justify-content space-between
+        padding 22px 18px
+        border 0
+        background #fff
+        font-size 1.0rem
+        text-align left
+
+      .slot-price
+        font-weight 700
+        opacity .7
+
+      .slot-options
+        border-top 1px solid #eee
+        padding 10px 0 12px
+        transform-origin top center
+
+      .slot-options-title
+        color #8f8f8f
+        font-size 1rem
+        margin 0 18px 8px
+
+      .slot-option
+        width 100%
+        display flex
+        align-items center
+        gap 12px
+        padding 14px 18px
+        border 0
+        background #fff
+        font-size 1.1rem
+        text-align left
+
+        .slot-radio
+          width 16px
+          height 16px
+          border-radius 50%
+          border 2px solid #808080
+          position relative
+          flex-shrink 0
+
+        &.active
+          .slot-radio
+            border-color var(--primary-color)
+
+            &:after
+              content ''
+              position absolute
+              width 8px
+              height 8px
+              border-radius 50%
+              background var(--primary-color)
+              top 2px
+              left 2px
+
+        &:hover
+          background #fafafa
+
+  .slot-expand-enter-active
+  .slot-expand-leave-active
+    transition opacity .2s ease, transform .2s ease
+
+  .slot-expand-enter-from
+  .slot-expand-leave-to
+    opacity 0
+    transform translateY(-6px) scaleY(.98)
+
+
+/*RESPONSIVE*/
+@media only screen and (max-width: 1200px)
+  .rtl .checkout-detail.product-detail
+    padding-left 300px
+
+  .checkout-detail.product-detail
+    padding-right 300px
+
+  .checkout-detail.product-detail .detail-right
+    width 300px
+
+@media only screen and (max-width: 992px)
+
+  .checkout-address-layout
+    display block
+
+    .address-wrapper
+    .address-form
+      width 100%
+      max-width 100%
+
+    .address-form
+      margin-top 15px
+
+      .sided
+        flex-wrap wrap
+        gap 10px
+
+        .outline-btn
+        .primary-btn
+          width 100%
+
+@media only screen and (max-width: 768px)
+  .rtl .checkout-detail.product-detail .detail-left
+    margin-left 0!important
+
+  .rtl .checkout-detail.product-detail
+    padding-right 0
+    padding-left 0
+
+  .checkout-detail.product-detail
+    padding-right 0
+
+  .checkout-detail.product-detail .detail-right
+    width 100%
+
+  .checkout
+    .delivery-schedule
+      max-width 100%
+
+  .delivery-date-popup
+  .delivery-slot-popup
+    .pop-over-content
+      padding 15px
+
+  .delivery-date-popup
+    .delivery-calendar
+      .calendar-nav
+        gap 10px
+
+        h5
+          min-width 120px
+
+      .calendar-grid-head
+        gap 4px
+
+      .calendar-grid-body
+        gap 4px
+
+      .calendar-day
+        height 40px
+        font-size 1rem
+
+@media only screen and (max-width: 576px)
+  .delivery-date-popup.has-layer
+  .delivery-slot-popup.has-layer
+    .layer + .pop-over-inner
+      top 50%
+      bottom auto
+      left 50%
+      right auto
+      width calc(100vw - 20px)
+      max-width 500px
+      max-height 86vh
+      transform translate(-50%, -50%) !important
+      border-radius border-radius
